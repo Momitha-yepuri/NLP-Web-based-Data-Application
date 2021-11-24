@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block links %}
+<a href="/admin" >ADMIN</a>
+{% endblock %}
+
+{% block body %}
+<div id="main" style='height: auto'>
+  <div id="content" style='height: auto'>
+    
+      <div class="box" style='height: auto'>
+          <div class="cl">&nbsp;</div>
+          <div class="posts">
+            <div class="post-subpage">
+              <div class="image" id="img-1" style='height: auto'> <a href="#"><img style='height:auto; width: 100%; object-fit: contain' src="" alt="" /></a> </div>
+              <div class="data">
+                <h4><a id="link-1" href="#"> </a></h4>
+                <p id="data-embed-1"> </p>
+                <br>
+                <button onclick="location.href='javascript:CreateBookmarkLink();'" class="btn">
+                  Bookmark</button>
+              </div>
+            </div>
+            <div class="post-subpage">
+              <div class="image" id="img-2" style='height: auto'> <a href="#"><img style='height: auto; width: 100%; object-fit: contain' src="" alt="" /></a> </div>
+              <div class="data">
+                <h4><a id="link-2" href="#"> </a></h4>
+                <p id="data-embed-2">  </p>
+                <br>
+                <button onclick="location.href='javascript:CreateBookmarkLink();'" class="btn">
+                  Bookmark</button>
+              </div>
+            </div>
+            <div class="post-subpage">
+              <div class="image" id="img-3" style='height: auto'> <a href="#"><img style='height: auto; width: 100%; object-fit: contain' src="" alt="" /></a> </div>
+              <div class="data">
+                <h4><a id="link-3" href="#"> </a></h4>
+                <p id="data-embed-3">  </p>
+                <br>
+                <button onclick="location.href='javascript:CreateBookmarkLink();'" class="btn">
+                  Bookmark</button>
+              </div>
+            </div>
+            <div class="post-subpage">
+              <div class="image" id="img-4" style='height: auto'> <a href="#"><img style='height: auto; width: 100%; object-fit: contain' src="" alt="" /></a> </div>
+              <div class="data">
+                <h4><a id="link-4" href="#"> </a></h4>
+                <p id="data-embed-4">  </p>
+                <br>
+                <button onclick="location.href='javascript:CreateBookmarkLink();'" class="btn">
+                  Bookmark</button>
+              </div>
+            </div>
+            <div class="post-subpage">
+              <div class="image" id="img-5" style='height: auto'> <a href="#"><img style='height: auto; width: 100%; object-fit: contain' src="" alt="" /></a> </div>
+              <div class="data">
+                <h4><a id="link-5" href="#"> </a></h4>
+                <p id="data-embed-5">  </p>
+                <br>
+                <button onclick="location.href='javascript:CreateBookmarkLink();'" class="btn">
+                  Bookmark</button>
+              </div>
+            </div>
+
+  
+
+            <div class="cl">&nbsp;</div>
+          </div>
+        </div>
+
+    <div class="cl">&nbsp;</div>
+  </div>
+  <div class="cl">&nbsp;</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+  $(document).ready(function (){
+
+    $.each([
+    "{{ url_for('article', folder='it', filename='internal_storage') }}",
+    "{{ url_for('article', folder='it', filename='it_support') }}",
+    "{{ url_for('article', folder='it', filename='php_developer') }}",
+    "{{ url_for('article', folder='it', filename='senior_engineer') }}",
+    "{{ url_for('article', folder='it', filename='senior_software_engineer') }}",
+    ], function(i, a){
+      $.get(a, function(data){
+
+        var shortened = $(data).find('#data-content').text().substring(0, 800);
+        var title = $(data).find('#data-title').text();
+        var image = $(data).find('#data-img img').attr('src');
+
+        // Embed data into the homepage
+        $("#data-embed-" + String(i+1)).text(shortened + '...');
+        $("#img-" + String(i+1) + " img").attr("src", image);
+        $("#link-" + String(i+1)).text(title);
+      });
+      $("#link-" + String(i+1)).attr("href", a)
+    });    
+  });
+</script>
+{% endblock %}

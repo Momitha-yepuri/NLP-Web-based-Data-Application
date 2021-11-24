@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block links %}
+<a href="/about" >LOGOUT</a>
+{% endblock %}
+
+{% block body %}
+
+  <div id="main" style='height: auto'>
+    <div id="content" style='height: auto'>
+      <div class="box" style='height: auto'>
+        <h2><span>Keep in Touch</span></h2>
+        <div class="cl">&nbsp;
+
+      </div>
+
+      <div class="contact-form" height=auto>
+        <form action="/admin" method="post" enctype="multipart/form-data" height=auto>
+          <div class="fields">
+            <label for="file">Name</label>
+            <input type="text" name="title" value="{{ title }}" required>
+            <div class="cl">&nbsp;</div> 
+            <label for="file">Email</label>
+            <input type="text" name="title" value="{{ title }}" required>
+            <div class="cl">&nbsp;</div> 
+          <label for="file">Message</label>
+            <textarea type="text" name="description" style="height:200px" required> {{ description }} </textarea>
+            <div class="cl">&nbsp;</div> 
+          
+          </div>
+          <input type="submit" name="button" value="Save">
+        </form>
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  {% endblock %}
+
