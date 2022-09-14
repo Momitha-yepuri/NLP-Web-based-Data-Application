@@ -1,8 +1,7 @@
 # NLP-Web-based-Data-Application
 
 ## Overview
-In Milestone I, we have built several machine learning models based on different feature representations of documents to classify job advertisement categories. In Milestone II, we will develop a T
-In this Project, we developed a job hunting website based on the Python Flask web development framework. The developed website will allow job hunters to browse existing job advertisements, as well as employers to create new job advertisements. The website will adopt one of the machine learning models built using the NLP pipeline, for the purpose of auto classifying categories for new job advertisement entries. Such functionality helps to reduce human data entry error, increase the job exposure to relevant candidates, and also improve the user experience of the job hunting site.
+In Milestone I, we have built several machine learning models based on different feature representations of documents to classify job advertisement categories. In Milestone II, we developed a job hunting website based on the Python Flask web development framework. The developed website will allow job hunters to browse existing job advertisements, as well as employers to create new job advertisements. The website will adopt one of the machine learning models built using the NLP pipeline, for the purpose of auto classifying categories for new job advertisement entries. Such functionality helps to reduce human data entry error, increase the job exposure to relevant candidates, and also improve the user experience of the job hunting site.
 
 ## Functionalities include:
 ### Job Display
